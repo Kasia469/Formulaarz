@@ -1,0 +1,40 @@
+﻿@model Formulaarz.Models.Dane
+
+<form asp-action="Form" method="post">
+    <div asp-validation-summary="All"></div>
+
+    <label>Imię</label>
+    <input asp-for="Imie" />
+    <span asp-validation-for="Imie"></span>
+
+    <label>Nazwisko</label>
+    <input asp-for="Nazwisko" />
+    <span asp-validation-for="Nazwisko"></span>
+
+    <label>Email</label>
+    <input asp-for="Email" type="email" />
+    <span asp-validation-for="Email"></span>
+
+    <label>Hasło</label>
+    <input asp-for="Haslo" type="password" />
+    <span asp-validation-for="Haslo"></span>
+
+    <label>Potwierdzenie Hasła</label>
+    <input asp-for="PotwierdzenieHasla" type="password" />
+    <span asp-validation-for="PotwierdzenieHasla"></span>
+
+    <label>Nr Telefonu</label>
+    <input asp-for="NrTelefonu" type="tel" />
+    <span asp-validation-for="NrTelefonu"></span>
+
+    <label>Wiek</label>
+    <input asp-for="Wiek" type="number" />
+    <span asp-validation-for="Wiek"></span>
+
+    <label>Miasto</label>
+    <select asp-for="Miasto" asp-items="Html.GetEnumSelectList<Formulaarz.Models.Miasta>()"></select>
+    <span asp-validation-for="Miasto"></span>
+
+    <button type="submit">Zarejestruj</button>
+    <button type="reset">Wyczyść</button>
+</form>
